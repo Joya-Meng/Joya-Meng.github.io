@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule 日程 | 申晋宇 Shen Jinyu</title>
+    
+<style>
+    /* 基础极简风格样式 */
+    body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 0; color: #333; background-color: #fafafa; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    
+    /* 顶部导航栏 */
+    header { background-color: #571801; color: #fff; padding: 20px 50px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100;}
+    header h1 { margin: 0; font-size: 24px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; }
+    header h1 a { color: #fff; transition: opacity 0.3s; }
+    header h1 a:hover { opacity: 0.8; }
+    nav a { color: #ccc; text-decoration: none; margin-left: 20px; font-size: 13px; text-transform: uppercase; transition: color 0.3s;}
+    nav a:hover { color: #fff; }
+    .lang-switch { background: transparent; border: 1px solid #ccc; color: #ccc; padding: 5px 12px; margin-left: 20px; cursor: pointer; transition: all 0.3s;}
+    .lang-switch:hover { border-color: #fff; color: #fff; }
+    
+    /* 首屏区域 - 加入背景图与半透明黑色遮罩 */
+    .hero { 
+        height: 50vh; 
+        display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; 
+        /* 修改下面 url 中的 'bg.jpg' 为您的实际图片文件名 */
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('photos/主页背景图.jpg') no-repeat center center;
+        background-size: cover;
+    }
+    /* 首屏文字改为白色，并加入轻微阴影以保证在复杂背景图上清晰可读 */
+    .hero h2 { font-size: 42px; margin: 0; font-weight: 300; letter-spacing: 2px; color: #fff; text-shadow: 1px 1px 5px rgba(0,0,0,0.6); }
+    .hero p { font-size: 16px; color: #f0f0f0; margin-top: 15px; letter-spacing: 1px; text-shadow: 1px 1px 5px rgba(0,0,0,0.6); }
+    
+    /* 通用板块 */
+    .section { padding: 80px 50px; max-width: 1100px; margin: 0 auto; }
+    .section h3 { font-size: 24px; font-weight: 300; text-transform: uppercase; margin-bottom: 40px; letter-spacing: 1px; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+    
+    /* 主页卡片网格 - 调整为整块可点击 */
+    .grid { display: flex; gap: 30px; flex-wrap: wrap; }
+    .card-link { flex: 1 1 300px; text-decoration: none; color: inherit; display: block; }
+    .card { background: #fff; padding: 30px; height: 100%; box-sizing: border-box; box-shadow: 0 4px 10px rgba(0,0,0,0.03); transition: transform 0.3s, box-shadow 0.3s; border-top: 3px solid transparent;}
+    .card-link:hover .card { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.08); border-top: 3px solid #571801; }
+    .card h4 { margin-top: 0; font-size: 20px; padding-bottom: 15px; color: #571801; margin-bottom: 15px; font-weight: 400;}
+    .card p { font-size: 14px; color: #666; margin-bottom: 20px;}
+    .card .more { font-size: 13px; color: #571801; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; }
+    
+    footer { background: #571801; color: #ddd; text-align: center; padding: 30px; font-size: 12px; margin-top: 50px; }
+</style>
+
+    <style>
+        /* 新增的 Headline 样式 (参照简介页) */
+        .page-header { text-align: center; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid #eaeaea; }
+        .page-header h2 { margin: 0; font-size: 28px; color: #571801; letter-spacing: 2px; }
+        .page-header p { color: #666; font-size: 14px; margin-top: 8px; }
+        
+        /* 日程页专属样式 */
+        .schedule-container { max-width: 800px; margin: 0 auto; padding-top: 20px; }
+        
+        .schedule-year { 
+            font-size: 28px; 
+            color: #571801; 
+            border-bottom: 2px solid #571801; 
+            padding-bottom: 10px; 
+            margin-top: 60px; 
+            margin-bottom: 30px; 
+            font-weight: 300; 
+            letter-spacing: 2px;
+        }
+        .schedule-year:first-child { margin-top: 0; }
+        
+        .schedule-item { 
+            display: flex; 
+            border-bottom: 1px solid #eaeaea; 
+            padding: 25px 15px; 
+            transition: background-color 0.3s ease; 
+        }
+        .schedule-item:hover { background-color: #f5f0ed; }
+        
+        .schedule-date { 
+            flex: 0 0 150px; 
+            font-weight: 500; 
+            color: #333; 
+            font-size: 18px; 
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        
+        .schedule-info { flex: 1; }
+        .schedule-title { font-size: 18px; color: #111; margin: 0 0 8px 0; font-weight: 500; }
+        .schedule-ensemble { font-size: 15px; color: #666; margin: 0; }
+        
+        /* 手机端适配：屏幕较小时日期和演出信息改为上下排列 */
+        @media (max-width: 600px) {
+            .schedule-item { flex-direction: column; padding: 20px 10px; }
+            .schedule-date { margin-bottom: 12px; font-size: 16px; color: #571801; }
+        }
+    </style>
+</head>
+<body>
+    
+<header>
+    <h1><a href="index.html">Shen Jinyu 申晋宇</a></h1>
+    <nav>
+            <a href="index.html" >Home 首页</a>
+            <a href="about.html" >Biography 简介</a>
+            <a href="media.html" >Media 媒体</a>
+            <a href="projects.html" >Projects 项目</a>
+            <a href="schedule.html" style="color: #fff; border-bottom: 1px solid #fff; padding-bottom: 2px;">Schedule 日程</a>
+            <a href="contact.html" >Contact 联系</a>
+
+        
+    </nav>
+</header>
+
+    <div class="section">
+        <h3 style="text-align: center; margin-bottom: 60px;">Concerts | 音乐会日程</h3>
+        
+        <div class="schedule-container">
+            
+            <!-- 2026 年日程 -->
+            <div class="schedule-year">2026</div>
+            
+            <div class="schedule-item">
+                <div class="schedule-date">2026.12.24</div>
+                <div class="schedule-info">
+                    <h4 class="schedule-title">专场音乐会</h4>
+                    <p class="schedule-ensemble">CANTO & BEAM 合唱团</p>
+                </div>
+            </div>
+            
+            <div class="schedule-item">
+                <div class="schedule-date">2026.09.06</div>
+                <div class="schedule-info">
+                    <h4 class="schedule-title">腾讯浪潮音乐大赏</h4>
+                    <p class="schedule-ensemble">嘉兴大潮爱乐乐团</p>
+                </div>
+            </div>
+            
+            <div class="schedule-item">
+                <div class="schedule-date">2026.07.07</div>
+                <div class="schedule-info">
+                    <h4 class="schedule-title">红墙杯合唱比赛</h4>
+                    <p class="schedule-ensemble">财政部机关合唱团</p>
+                </div>
+            </div>
+            
+            <div class="schedule-item">
+                <div class="schedule-date">2026.06.18</div>
+                <div class="schedule-info">
+                    <h4 class="schedule-title">专场音乐会</h4>
+                    <p class="schedule-ensemble">BEAM合唱团</p>
+                </div>
+            </div>
+            
+            <div class="schedule-item">
+                <div class="schedule-date">2026.01.15</div>
+                <div class="schedule-info">
+                    <h4 class="schedule-title">冬日音乐会</h4>
+                    <p class="schedule-ensemble">BEAM合唱团</p>
+                </div>
+            </div>
+
+            <!-- 2025 年日程 -->
+            <div class="schedule-year">2025</div>
+            
+            <div class="schedule-item">
+                <div class="schedule-date">2025.07.13</div>
+                <div class="schedule-info">
+                    <h4 class="schedule-title">专场音乐会</h4>
+                    <p class="schedule-ensemble">RSH-Vokalensemble</p>
+                </div>
+            </div>
+            
+            <div class="schedule-item">
+                <div class="schedule-date">2025.07.04</div>
+                <div class="schedule-info">
+                    <h4 class="schedule-title">钢琴独奏音乐会</h4>
+                    <p class="schedule-ensemble">Solo Recital</p>
+                </div>
+            </div>
+            
+            <div class="schedule-item">
+                <div class="schedule-date">2025.06.07</div>
+                <div class="schedule-info">
+                    <h4 class="schedule-title">专场音乐会</h4>
+                    <p class="schedule-ensemble">Westfalen Neue Philharmonie 交响乐团</p>
+                </div>
+            </div>
+            
+            <div class="schedule-item">
+                <div class="schedule-date">2025.05.17</div>
+                <div class="schedule-info">
+                    <h4 class="schedule-title">Boulez纪念音乐会</h4>
+                    <p class="schedule-ensemble">RSH-Ensemble</p>
+                </div>
+            </div>
+            
+            <div class="schedule-item">
+                <div class="schedule-date">2025.04.06</div>
+                <div class="schedule-info">
+                    <h4 class="schedule-title">专场音乐会</h4>
+                    <p class="schedule-ensemble">Candomino 合唱团</p>
+                </div>
+            </div>
+            
+            <div class="schedule-item">
+                <div class="schedule-date">2025.02.21</div>
+                <div class="schedule-info">
+                    <h4 class="schedule-title">专场音乐会</h4>
+                    <p class="schedule-ensemble">Dinu Lipatti 交响乐团</p>
+                </div>
+            </div>
+            
+            <div class="schedule-item">
+                <div class="schedule-date">2025.01.24</div>
+                <div class="schedule-info">
+                    <h4 class="schedule-title">专场音乐会</h4>
+                    <p class="schedule-ensemble">RSH-Vokalensemble</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+<footer>
+    <p>&copy; 2026 Shen Jinyu. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

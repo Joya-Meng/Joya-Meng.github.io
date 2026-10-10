@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact 联系 | 申晋宇 ShenJinyu</title>
+    
+<style>
+    /* 基础极简风格样式 */
+    body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 0; color: #333; background-color: #fafafa; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    
+    /* 顶部导航栏 */
+    header { background-color: #571801; color: #fff; padding: 20px 50px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100;}
+    header h1 { margin: 0; font-size: 24px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; }
+    header h1 a { color: #fff; transition: opacity 0.3s; }
+    header h1 a:hover { opacity: 0.8; }
+    nav a { color: #ccc; text-decoration: none; margin-left: 20px; font-size: 13px; text-transform: uppercase; transition: color 0.3s;}
+    nav a:hover { color: #fff; }
+    .lang-switch { background: transparent; border: 1px solid #ccc; color: #ccc; padding: 5px 12px; margin-left: 20px; cursor: pointer; transition: all 0.3s;}
+    .lang-switch:hover { border-color: #fff; color: #fff; }
+    
+    /* 首屏区域 - 加入背景图与半透明黑色遮罩 */
+    .hero { 
+        height: 50vh; 
+        display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; 
+        /* 修改下面 url 中的 'bg.jpg' 为您的实际图片文件名 */
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('photos/主页背景图.jpg') no-repeat center center;
+        background-size: cover;
+    }
+    /* 首屏文字改为白色，并加入轻微阴影以保证在复杂背景图上清晰可读 */
+    .hero h2 { font-size: 42px; margin: 0; font-weight: 300; letter-spacing: 2px; color: #fff; text-shadow: 1px 1px 5px rgba(0,0,0,0.6); }
+    .hero p { font-size: 16px; color: #f0f0f0; margin-top: 15px; letter-spacing: 1px; text-shadow: 1px 1px 5px rgba(0,0,0,0.6); }
+    
+    /* 通用板块 */
+    .section { padding: 80px 50px; max-width: 1100px; margin: 0 auto; }
+    .section h3 { font-size: 24px; font-weight: 300; text-transform: uppercase; margin-bottom: 40px; letter-spacing: 1px; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+    
+    /* 主页卡片网格 - 调整为整块可点击 */
+    .grid { display: flex; gap: 30px; flex-wrap: wrap; }
+    .card-link { flex: 1 1 300px; text-decoration: none; color: inherit; display: block; }
+    .card { background: #fff; padding: 30px; height: 100%; box-sizing: border-box; box-shadow: 0 4px 10px rgba(0,0,0,0.03); transition: transform 0.3s, box-shadow 0.3s; border-top: 3px solid transparent;}
+    .card-link:hover .card { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.08); border-top: 3px solid #571801; }
+    .card h4 { margin-top: 0; font-size: 20px; padding-bottom: 15px; color: #571801; margin-bottom: 15px; font-weight: 400;}
+    .card p { font-size: 14px; color: #666; margin-bottom: 20px;}
+    .card .more { font-size: 13px; color: #571801; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; }
+    
+    footer { background: #571801; color: #ddd; text-align: center; padding: 30px; font-size: 12px; margin-top: 50px; }
+</style>
+
+    <style>
+        .contact-container { max-width: 600px; margin: 0 auto; text-align: center; padding: 50px 30px; }
+        .contact-item { margin-bottom: 30px; font-size: 16px; }
+        .contact-item span.title { display: block; font-size: 14px; color: #571801; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
+        .contact-item a { color: #333; transition: color 0.3s; }
+        .contact-item a:hover { color: #571801; text-decoration: underline; }
+    </style>
+</head>
+<body>
+    
+<header>
+    <h1><a href="index.html">Shen Jinyu 申晋宇</a></h1>
+    <nav>
+            <a href="index.html" >Home 首页</a>
+            <a href="about.html" >Biography 简介</a>
+            <a href="media.html" >Media 媒体</a>
+            <a href="projects.html" >Projects 项目</a>
+            <a href="schedule.html" >Schedule 日程</a>
+            <a href="contact.html" style="color: #fff; border-bottom: 1px solid #fff; padding-bottom: 2px;">Contact 联系</a>
+
+        
+    </nav>
+</header>
+
+    <div class="section">
+        <h3>Contact | 联系方式</h3>
+        <div class="card contact-container" style="text-align: left; padding: 40px 50px;">
+            
+            <div class="contact-item" style="margin-bottom: 35px; font-size: 20px;">
+                <span class="title" style="display: block; font-size: 18px; color: #571801; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;">Email / 电子邮箱</span>
+                <p style="margin: 10px 0;"><a href="mailto:shenjinyu952@gmail.com" style="color: #333; text-decoration: none;">shenjinyu952@gmail.com</a></p>
+                <p style="margin: 10px 0;"><a href="mailto:shenjinyumusic@qq.com" style="color: #333; text-decoration: none;">shenjinyumusic@qq.com</a></p>
+            </div>
+            
+            <div class="contact-item" style="margin-bottom: 35px; font-size: 20px;">
+                <span class="title" style="display: block; font-size: 18px; color: #571801; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;">Phone / 联系电话</span>
+                <p style="margin: 10px 0;"><a href="tel:+8618600239010" style="color: #333; text-decoration: none;">+86 186 0023 9010</a></p>
+            </div>
+
+            <div class="contact-item" style="margin-bottom: 10px; font-size: 20px;">
+                <span class="title" style="display: block; font-size: 18px; color: #571801; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;">Social Media / 社交媒体</span>
+                <p style="margin: 15px 0;">
+                    <!-- 这里是带图标的 Instagram 超链接 -->
+                    <a href="https://www.instagram.com/jinyu_shen_?psln=MWJkZnE5bG0wc3NwZQ%3D%3D&utm_source=qr" target="_blank" style="color: #333; text-decoration: none; display: inline-flex; align-items: center; transition: color 0.3s;" onmouseover="this.style.color='#571801'" onmouseout="this.style.color='#333'">
+                        
+                        <!-- 极简 Instagram SVG 图标 -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 12px;">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                        
+                        <span style="font-size: 20px;">@jinyu_shen_</span>
+                    </a>
+                </p>
+            </div>
+            
+        </div>
+    </div>
+    
+<footer>
+    <p>&copy; 2026 Shen Jinyu. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

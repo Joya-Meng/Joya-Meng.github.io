@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biography 简介 | 申晋宇 Shen Jinyu</title>
+    
+<style>
+    /* 基础极简风格样式 */
+    body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 0; color: #333; background-color: #fafafa; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    
+    /* 顶部导航栏 */
+    header { background-color: #571801; color: #fff; padding: 20px 50px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100;}
+    header h1 { margin: 0; font-size: 24px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; }
+    header h1 a { color: #fff; transition: opacity 0.3s; }
+    header h1 a:hover { opacity: 0.8; }
+    nav a { color: #ccc; text-decoration: none; margin-left: 20px; font-size: 13px; text-transform: uppercase; transition: color 0.3s;}
+    nav a:hover { color: #fff; }
+    .lang-switch { background: transparent; border: 1px solid #ccc; color: #ccc; padding: 5px 12px; margin-left: 20px; cursor: pointer; transition: all 0.3s;}
+    .lang-switch:hover { border-color: #fff; color: #fff; }
+    
+    /* 首屏区域 - 加入背景图与半透明黑色遮罩 */
+    .hero { 
+        height: 50vh; 
+        display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; 
+        /* 修改下面 url 中的 'bg.jpg' 为您的实际图片文件名 */
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('photos/主页背景图.jpg') no-repeat center center;
+        background-size: cover;
+    }
+    /* 首屏文字改为白色，并加入轻微阴影以保证在复杂背景图上清晰可读 */
+    .hero h2 { font-size: 42px; margin: 0; font-weight: 300; letter-spacing: 2px; color: #fff; text-shadow: 1px 1px 5px rgba(0,0,0,0.6); }
+    .hero p { font-size: 16px; color: #f0f0f0; margin-top: 15px; letter-spacing: 1px; text-shadow: 1px 1px 5px rgba(0,0,0,0.6); }
+    
+    /* 通用板块 */
+    .section { padding: 80px 50px; max-width: 1100px; margin: 0 auto; }
+    .section h3 { font-size: 24px; font-weight: 300; text-transform: uppercase; margin-bottom: 40px; letter-spacing: 1px; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+    
+    /* 主页卡片网格 - 调整为整块可点击 */
+    .grid { display: flex; gap: 30px; flex-wrap: wrap; }
+    .card-link { flex: 1 1 300px; text-decoration: none; color: inherit; display: block; }
+    .card { background: #fff; padding: 30px; height: 100%; box-sizing: border-box; box-shadow: 0 4px 10px rgba(0,0,0,0.03); transition: transform 0.3s, box-shadow 0.3s; border-top: 3px solid transparent;}
+    .card-link:hover .card { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.08); border-top: 3px solid #571801; }
+    .card h4 { margin-top: 0; font-size: 20px; padding-bottom: 15px; color: #571801; margin-bottom: 15px; font-weight: 400;}
+    .card p { font-size: 14px; color: #666; margin-bottom: 20px;}
+    .card .more { font-size: 13px; color: #571801; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; }
+    
+    footer { background: #571801; color: #ddd; text-align: center; padding: 30px; font-size: 12px; margin-top: 50px; }
+</style>
+
+    <style>
+        .bio-header { text-align: center; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid #eaeaea; }
+        .bio-header h2 { margin: 0; font-size: 28px; color: #571801; letter-spacing: 2px; }
+        .bio-header p { color: #666; font-size: 14px; margin-top: 8px; }
+
+        /* 新增的个人照片样式 */
+        .bio-image { text-align: center; margin-bottom: 40px; }
+        .bio-image img { 
+            max-width: 100%; 
+            height: auto; 
+            max-height: 400px; /* 控制照片的最大高度 */
+            border-radius: 4px; /* 轻微圆角 */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* 轻微阴影增加高级感 */
+            object-fit: cover;
+        }
+
+        .bio-content { display: flex; flex-direction: column; gap: 35px; }
+        .bio-section h4 { font-size: 18px; color: #571801; border-left: 4px solid #571801; padding-left: 10px; margin-bottom: 15px; font-weight: 500; }
+        .bio-text p { margin-bottom: 15px; text-align: justify; font-size: 15px; line-height: 1.8; color: #444; }
+        .bio-list { list-style-type: none; padding: 0; margin: 0; }
+        .bio-list li { margin-bottom: 10px; font-size: 15px; color: #444; position: relative; padding-left: 15px; }
+        .bio-list li::before { content: "•"; color: #571801; position: absolute; left: 0; font-weight: bold; }
+        .ensemble-list { column-count: 2; column-gap: 40px; list-style-type: none; padding: 0; margin: 0; }
+        .ensemble-list li { margin-bottom: 8px; font-size: 14px; color: #555; position: relative; padding-left: 15px; break-inside: avoid; }
+        .ensemble-list li::before { content: "•"; color: #ccc; position: absolute; left: 0; }
+        @media (max-width: 768px) { .ensemble-list { column-count: 1; } }
+    </style>
+</head>
+<body>
+    
+<header>
+    <h1><a href="index.html">Shen Jinyu 申晋宇</a></h1>
+    <nav>
+            <a href="index.html" >Home 首页</a>
+            <a href="about.html" style="color: #fff; border-bottom: 1px solid #fff; padding-bottom: 2px;">Biography 简介</a>
+            <a href="media.html" >Media 媒体</a>
+            <a href="projects.html" >Projects 项目</a>
+            <a href="schedule.html" >Schedule 日程</a>
+            <a href="contact.html" >Contact 联系</a>
+
+        
+    </nav>
+</header>
+
+    <div class="section">
+        <h3>Biography | 个人简介</h3>
+        
+        <div class="bio-header">
+            <h2>申晋宇 Shen Jinyu</h2>
+            <p>旅德青年指挥 | Conductor</p>
+        </div>
+
+        <!-- 新增的照片展示区域 -->
+        <div class="bio-image">
+            <!-- 请确认图片路径，这里假设照片名为“个人照片.jpg”并存放在 photos 文件夹内 -->
+            <img src="photos/个人简介.jpg" alt="申晋宇 Shen Jinyu 个人照片">
+        </div>
+        
+        <div class="bio-content">
+            <div class="bio-section">
+                <h4>Current Positions | 现任职务</h4>
+                <ul class="bio-list">
+                    <li>CANTO室内合唱团艺术总监 (Artistic Director, CANTO vocal ensemble)</li>
+                    <li>AIR 现代乐集首席指挥 (Principal Conductor, AIR Contemporary Music Collective)</li>
+                    <li>爱乐佳合青少年合唱团指挥 (Conductor, Aiyue Jiahe Youth Choir)</li>
+                    <li>东岸音乐实验学校指挥教师 (Conducting Teacher, Beijing Eastbank Music of Academy )</li>
+                </ul>
+            </div>
+            
+            <div class="bio-section bio-text">
+                <h4>Education Background | 教育背景</h4>
+                <p>本科毕业于中央音乐学院指挥系并保送研究生，师从夏小汤教授、郑小瑛教授。辅修录音艺术指导专业并获得毕业证书。求学期间曾荣获中国国家奖学金。随后旅德就读于德国国立罗伯特舒曼音乐学院 (Robert Schumann Hochschule Düsseldorf) 学习指挥和钢琴，以满分成绩毕业并获硕士学位。</p>
+                <p>留德期间师从著名德国指挥家、教育家 Rüdiger Bohn 教授与 Christian von Gehren 教授，并随 Timo Nuoranne 教授辅修合唱指挥。曾参加吕嘉、Jorma Panula、Ulrich Windfuhr 等著名音乐家的大师班，并获得高度评价。</p>
+                <p>She graduated with a Bachelor`s degree from the Conducting Department of the Central Conservatory of Music and was directly admitted to postgraduate study, where she studied under Professors Xia Xiaotang and Zheng Xiaoying. She also minored in Recording Art Direction with a certification of completion. During her studies, she was awarded the China National Scholarship. She was also  studied conducting and piano at the Robert Schumann Hochschule Düsseldorf, Germany, graduating with a Master`s degree and achieving the highest marks.</p>
+                <p>While in Germany, she studied under the renowned German conductor and educator Prof. Rüdiger Bohn and Prof. Christian von Gehren, and took a minor in choral conducting under Prof. Timo Nuoranne. She participated in masterclasses led by renowned musicians such as Lü Jia, Jorma Panula and Ulrich Windfuhr, receiving high praise.</p>
+            </div>
+            
+            <div class="bio-section bio-text">
+                <h4>Professional Experience | 职业经历</h4>
+                <p>曾任中国爱乐乐团青少年交响乐团指挥、北京理工大学合唱团指挥。在德国期间，曾担任埃森交响乐团 (Essener Symphonie Orchester)、埃森青年交响乐团 (Essener Jugend Symphonie Orchester) 和下萨克森州青年爱乐乐团 (Jungend Philharmonisches Orchester Niedersachsen) 的助理指挥。在歌剧与清唱剧领域，她曾在《艺术家的生涯》(La Bohème)、《蝴蝶夫人》(Madame Butterfly)、《托斯卡》(Tosca)、《女人心》(Così fan tutte)、《创世纪》(Die Schöpfung)、《以利亚》(Elias)、《风流寡妇》(Die lustige Witwe) 及《伤逝》等项目中担任助理指挥和合唱指挥。</p>
+                <p>作为 AIR 现代乐集 (AIR Contemporary Music Collective) 首席指挥，自乐团 2018 年成立以来,成功首演数十部现代作品及室内乐歌剧,并执棒杭州现代音乐节等重要演出。2025年起任教于北京市东岸音乐学校,担任指挥专业助教和合唱课教师,策划并成功上演多场专题音乐会。</p>
+                <p>She has served as conductor of the China Philharmonic Youth Symphony Orchestra and the Beijing Institute of Technology Choir. Whilst in Germany, she served as assistant conductor for Essener Symphonie Orchester, Essener Jugend Symphonie Orchester and Jungend Philharmonisches Orchester Niedersachsen. In the field of opera and oratorio, she has conducted <i>La Bohème</i>, <i>Madame Butterfly</i>, <i>Tosca</i>, <i>Così fan tutte</i>, <i>Die Schöpfung</i>, <i>Elias</i>, <i>Die lustige Witwe</i>.</p>
+                <p>As Principal Conductor of the AIR Contemporary Music Collective, she has, since the ensemble`s founding in 2018, successfully premiered dozens of contemporary works and chamber operas, and has conducted major performances such as the Hangzhou Contemporary Music Festival. Since 2025, she started teaching at the Beijing Eastbank Music of Academy, serving as a teaching assistant in the conducting programme and a choral teacher, whilst also organising and performing numerous concerts.</p>
+            </div>
+
+            <div class="bio-section">
+                <h4>Collaborations | 合作乐团与合唱团</h4>
+                <ul class="ensemble-list">
+                    <li>杜塞尔多夫交响乐团 (Düsseldorfer Symphoniker)</li>
+                    <li>威斯特法伦爱乐乐团 (Westfalen Neue Philharmonie)</li>
+                    <li>莱茵爱乐乐团 (Rheinische Philharmonie)</li>
+                    <li>杜伊斯堡爱乐乐团 (Duisburger Philharmoniker)</li>
+                    <li>西德室内交响乐团 (Südwestdeutsches Kammerorchester)</li>
+                    <li>埃森爱乐乐团 (Essen Philharmonie)</li>
+                    <li>罗马尼亚 Dinu Lipatti 交响乐团 (Filarmonica Dinu Lipatti)</li>
+                    <li>罗伯特舒曼交响乐团 (Sinfonieorchester der RSH)</li>
+                    <li>当代乐团 (Musikfabrik Ensemble)</li>
+                    <li>下萨克森青年爱乐乐团 (Jungend Philharmonisches Orchester Niedersachsen)</li>
+                    <li>中国青年交响乐团</li>
+                    <li>RSH Vokalensemble</li>
+                    <li>Candomino 合唱团</li>
+                    <li>兰州音乐厅合唱团</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+<footer>
+    <p>&copy; 2026 Shen Jinyu. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

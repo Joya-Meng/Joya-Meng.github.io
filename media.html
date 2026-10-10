@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media 媒体 | 申晋宇 Jinyu Shen</title>
+    
+<style>
+    /* 基础极简风格样式 */
+    body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 0; color: #333; background-color: #fafafa; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    
+    /* 顶部导航栏 */
+    header { background-color: #571801; color: #fff; padding: 20px 50px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100;}
+    header h1 { margin: 0; font-size: 24px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; }
+    header h1 a { color: #fff; transition: opacity 0.3s; }
+    header h1 a:hover { opacity: 0.8; }
+    nav a { color: #ccc; text-decoration: none; margin-left: 20px; font-size: 13px; text-transform: uppercase; transition: color 0.3s;}
+    nav a:hover { color: #fff; }
+    .lang-switch { background: transparent; border: 1px solid #ccc; color: #ccc; padding: 5px 12px; margin-left: 20px; cursor: pointer; transition: all 0.3s;}
+    .lang-switch:hover { border-color: #fff; color: #fff; }
+    
+    /* 首屏区域 - 加入背景图与半透明黑色遮罩 */
+    .hero { 
+        height: 50vh; 
+        display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; 
+        /* 修改下面 url 中的 'bg.jpg' 为您的实际图片文件名 */
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('photos/主页背景图.jpg') no-repeat center center;
+        background-size: cover;
+    }
+    /* 首屏文字改为白色，并加入轻微阴影以保证在复杂背景图上清晰可读 */
+    .hero h2 { font-size: 42px; margin: 0; font-weight: 300; letter-spacing: 2px; color: #fff; text-shadow: 1px 1px 5px rgba(0,0,0,0.6); }
+    .hero p { font-size: 16px; color: #f0f0f0; margin-top: 15px; letter-spacing: 1px; text-shadow: 1px 1px 5px rgba(0,0,0,0.6); }
+    
+    /* 通用板块 */
+    .section { padding: 80px 50px; max-width: 1100px; margin: 0 auto; }
+    .section h3 { font-size: 24px; font-weight: 300; text-transform: uppercase; margin-bottom: 40px; letter-spacing: 1px; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+    
+    /* 主页卡片网格 - 调整为整块可点击 */
+    .grid { display: flex; gap: 30px; flex-wrap: wrap; }
+    .card-link { flex: 1 1 300px; text-decoration: none; color: inherit; display: block; }
+    .card { background: #fff; padding: 30px; height: 100%; box-sizing: border-box; box-shadow: 0 4px 10px rgba(0,0,0,0.03); transition: transform 0.3s, box-shadow 0.3s; border-top: 3px solid transparent;}
+    .card-link:hover .card { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.08); border-top: 3px solid #571801; }
+    .card h4 { margin-top: 0; font-size: 20px; padding-bottom: 15px; color: #571801; margin-bottom: 15px; font-weight: 400;}
+    .card p { font-size: 14px; color: #666; margin-bottom: 20px;}
+    .card .more { font-size: 13px; color: #571801; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; }
+    
+    footer { background: #571801; color: #ddd; text-align: center; padding: 30px; font-size: 12px; margin-top: 50px; }
+</style>
+
+    <style>
+        /* 媒体页专属样式 */
+        .media-section-title { font-size: 20px; color: #571801; margin-bottom: 20px; border-bottom: 2px solid #571801; display: inline-block; padding-bottom: 5px; }
+        
+        /* 视频容器 */
+        .video-grid { display: flex; flex-direction: column; gap: 40px; margin-bottom: 60px; }
+        .video-item { width: 100%; max-width: 800px; margin: 0 auto; box-shadow: 0 4px 15px rgba(0,0,0,0.1); background: #000; }
+        .video-item video { width: 100%; display: block; }
+        .video-caption { text-align: center; font-size: 14px; color: #666; margin-top: 10px; }
+
+        /* 照片瀑布流/网格 */
+        .photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+        .photo-item { width: 100%; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .photo-item img { width: 100%; height: auto; display: block; transition: transform 0.3s ease; }
+        .photo-item:hover img { transform: scale(1.03); }
+    </style>
+</head>
+<body>
+    
+<header>
+    <h1><a href="index.html">Shen Jinyu 申晋宇</a></h1>
+    <nav>
+            <a href="index.html" >Home 首页</a>
+            <a href="about.html" >Biography 简介</a>
+            <a href="media.html" style="color: #fff; border-bottom: 1px solid #fff; padding-bottom: 2px;">Media 媒体</a>
+            <a href="projects.html" >Projects 项目</a>
+            <a href="schedule.html" >Schedule 日程</a>
+            <a href="contact.html" >Contact 联系</a>
+
+        
+    </nav>
+</header>
+
+    
+    <div class="section">
+        <h3>Media | 媒体资料</h3>
+        
+        <!-- 视频部分 -->
+        <h4 class="media-section-title">Videos 视频</h4>
+        <div class="video-grid">
+            <!-- 视频 1  -->
+            <div>
+                <div class="video-item">
+                    <video controls poster="photos/申晋宇 Der fliegende Holländer.png">
+                        <source src="videos/申晋宇 Der fliegende Holländer.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <p class="video-caption">Der fliegende Holländer - R.Wagner</p>
+            </div>
+
+            <!-- 视频 2 -->
+            <div>
+                <div class="video-item">
+                    <video controls poster="photos/申晋宇 Boulez Memoriale.png">
+                        <source src="videos/申晋宇 Boulez Memoriale.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <p class="video-caption">Memoriale - P.Boulez</p>
+            </div>
+
+            <!-- 视频 3 -->
+            <div>
+                <div class="video-item">
+                    <video controls poster="photos/Blessed are the dead.png">
+                        <source src="videos/Blessed are the dead.mp4" type="video/mp4">
+                    </video>
+                 </div>
+                <p class="video-caption">Blessed are the dead - H.Howells</p>
+            </div>
+        </div>
+
+        
+
+        <!-- 照片部分 -->
+        <h4 class="media-section-title">Photos 照片</h4>
+        <div class="photo-grid">
+            <!-- 照片 1 -->
+            <div class="photo-item">
+                <!-- 请确保照片文件与生成的 HTML 处于同级目录的 photos 文件夹中，或修改这里的路径 -->
+                <img src="photos/照片1-1.jpg" alt="Concert Photo 1">
+            </div>
+            <!-- 照片 2 -->
+            <div class="photo-item">
+                <img src="photos/照片1-2.jpg" alt="Concert Photo 2">
+            </div>
+            <!-- 照片 3 -->
+            <div class="photo-item">
+                <img src="photos/照片1-3.jpg" alt="Concert Photo 3">
+            </div>
+            <!-- 照片 4 -->
+            <div class="photo-item">
+                <img src="photos/照片2-1.jpg" alt="Concert Photo 4">
+            </div>
+            <!-- 照片 5 -->
+            <div class="photo-item">
+                <img src="photos/照片2-2.jpg" alt="Concert Photo 5">
+            </div>
+            <!-- 照片 6 -->
+            <div class="photo-item">
+                <img src="photos/照片2-3.jpg" alt="Concert Photo 6">
+            </div>
+            <!-- 照片 7 -->
+            <div class="photo-item">
+                <img src="photos/照片3-1.jpg" alt="Concert Photo 7">
+            </div>
+            <!-- 照片 8 -->
+            <div class="photo-item">
+                <img src="photos/照片3-2.jpg" alt="Concert Photo 8">
+            </div>
+            <!-- 照片 9 -->
+            <div class="photo-item">
+                <img src="photos/照片3-3.jpg" alt="Concert Photo 9">
+            </div>
+        </div>
+    </div>
+    
+    
+<footer>
+    <p>&copy; 2026 Shen Jinyu. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
