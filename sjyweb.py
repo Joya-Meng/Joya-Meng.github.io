@@ -6,21 +6,47 @@ import webbrowser
 # --------------------------
 # 公共样式
 # --------------------------
+# --------------------------
+# 公共样式
+# --------------------------
 common_style = """
 <style>
     /* 基础极简风格样式 */
     body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 0; color: #333; background-color: #fafafa; line-height: 1.6; }
     a { text-decoration: none; color: inherit; }
     
-    /* 顶部导航栏 */
+    /* 顶部导航栏 (PC端默认样式) */
     header { background-color: #571801; color: #fff; padding: 20px 50px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100;}
     header h1 { margin: 0; font-size: 24px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; }
     header h1 a { color: #fff; transition: opacity 0.3s; }
     header h1 a:hover { opacity: 0.8; }
+    nav { display: flex; align-items: center; }
     nav a { color: #ccc; text-decoration: none; margin-left: 20px; font-size: 13px; text-transform: uppercase; transition: color 0.3s;}
     nav a:hover { color: #fff; }
     .lang-switch { background: transparent; border: 1px solid #ccc; color: #ccc; padding: 5px 12px; margin-left: 20px; cursor: pointer; transition: all 0.3s;}
     .lang-switch:hover { border-color: #fff; color: #fff; }
+    
+    /* 手机端头部导航自适应优化 */
+    @media (max-width: 768px) {
+        header { 
+            flex-direction: column; /* 改为上下排列 */
+            padding: 15px 20px; /* 减小两侧内边距 */
+            gap: 15px; /* 标题和导航之间的间距 */
+        }
+        header h1 {
+            font-size: 20px; /* 稍微缩小标题字体 */
+            text-align: center;
+        }
+        nav {
+            flex-wrap: wrap; /* 允许导航项换行 */
+            justify-content: center; /* 导航项居中 */
+            gap: 12px; /* 导航项之间的间距 */
+        }
+        nav a { 
+            margin-left: 0; /* 取消左侧固定间距 */
+            font-size: 12px; /* 稍微缩小导航字体 */
+        }
+    }
     
     /* 首屏区域 - 加入背景图与半透明黑色遮罩 */
     .hero { 
@@ -36,6 +62,13 @@ common_style = """
     
     /* 通用板块 */
     .section { padding: 80px 50px; max-width: 1100px; margin: 0 auto; }
+    
+    /* 手机端通用板块边距优化 */
+    @media (max-width: 768px) {
+        .section { padding: 40px 20px; }
+        .hero h2 { font-size: 32px; }
+    }
+
     .section h3 { font-size: 24px; font-weight: 300; text-transform: uppercase; margin-bottom: 40px; letter-spacing: 1px; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
     
     /* 主页卡片网格 - 调整为整块可点击 */
@@ -60,7 +93,7 @@ def build_header(current_page):
         ("home", "Home 首页", "index.html"),
         ("about", "Biography 简介", "about.html"),
         ("media", "Media 媒体", "media.html"),
-        ("projects", "Projects 项目", "projects.html"),
+        ("projects", "Projects 企划", "projects.html"),
         ("schedule", "Schedule 日程", "schedule.html"),
         ("contact", "Contact 联系", "contact.html"),
     ]
@@ -192,7 +225,7 @@ about_html = f"""<!DOCTYPE html>
             <div class="bio-section">
                 <h4>Current Positions | 现任职务</h4>
                 <ul class="bio-list">
-                    <li>CANTO室内合唱团艺术总监 (Artistic Director, CANTO vocal ensemble)</li>
+                    <li>CANTO青年室内合唱团艺术总监 (Artistic Director, CANTO vocal ensemble)</li>
                     <li>AIR 现代乐集首席指挥 (Principal Conductor, AIR Contemporary Music Collective)</li>
                     <li>爱乐佳合青少年合唱团指挥 (Conductor, Aiyue Jiahe Youth Choir)</li>
                     <li>东岸音乐实验学校指挥教师 (Conducting Teacher, Beijing Eastbank Music of Academy )</li>
@@ -399,8 +432,8 @@ projects_html = f"""<!DOCTYPE html>
                 <img src="photos/canto.jpg" alt="CANTO Vocal Ensemble Logo">
             </div>
             <div class="project-info">
-                <h4>CANTO Vocal Ensemble | CANTO室内合唱团</h4>
-                <p>申晋宇创办的CANTO青年室内合唱团是立足北京的新锐室内合唱团体,专注演绎多风格合唱作品。合唱团秉持回归人声本质的艺术理念,兼顾古典作品的庄重质感与当代作品的多元风格。以专业化、年轻化为发展方向，致力于打造高质量的室内合唱艺术平台。未来，团队将持续推出专场音乐会、专题展演及原创作品展示等艺术活动，深耕室内合唱领域，持续传播多元的合唱艺术。</p>
+                <h4>CANTO Vocal Ensemble | CANTO青年室内合唱团</h4>
+                <p>申晋宇创办的CANTO青年室内合唱团是立足北京的新锐室内合唱团体,专注演绎多风格合唱作品。合唱团秉持回归人声本质的艺术理念,兼顾古典作品的庄重质感与当代作品的多元风格。以专业化、年轻化为发展方向，致力于打造高质量的室内合唱艺术平台。未来，团队将持续推出专场音乐会、专题展演及原创作品展示等艺术活动，深耕室内合唱艺术。</p>
                 <p>The CANTO Vocal Ensemble is a chamber choir founded by Shen Jinyu, based in Beijing, specialising in the performance of choral works across a variety of styles. Upholding an artistic philosophy centred on  the essence of the individual artistic voice. In the future, the ensemble will continue to organise chroal concerts, commissioned works concerts , deepening its engagement with the field of chamber choir whilst continuing to promote the diversity of choral art.</p>
                 <a href="https://xhslink.cn/o/ATZX9F3uFBm" target="_blank" class="project-link">访问主页 / Visit Homepage →</a>
             </div>
@@ -413,7 +446,7 @@ projects_html = f"""<!DOCTYPE html>
             </div>
             <div class="project-info">
                 <h4>Podcast | 大耳青年</h4>
-                <p>申晋宇创办的《大耳青年》是一档访谈与分享的播客，与不同专业背景的朋友们谈论音乐和艺术。我们邀请各行各业的朋友们坐下对谈，围绕音乐、艺术与生活展开交流。在对话中，倾听不同职业背景的人分享与艺术相伴的真实体验、思考与选择。</p>
+                <p>申晋宇创办的《大耳青年》是一档访谈与分享的播客，与不同专业背景的朋友们谈论音乐和艺术。我们邀请各行各业的朋友们坐下对谈，围绕音乐、艺术与生活展开交流。在对话中，倾听不同职业背景的人分享与音乐艺术相伴的真实体验、思考与选择。</p>
                 <p>This is a podcast programm featuring interviews and discussions, where we talk about music and the arts with friends from diverse professional backgrounds.</p>
                 <a href="https://www.xiaoyuzhoufm.com/podcast/634ea974fc1737df59631e0a" target="_blank" class="project-link">收听播客 / Listen to Podcast →</a>
             </div>

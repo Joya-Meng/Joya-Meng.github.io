@@ -10,15 +10,38 @@
     body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 0; color: #333; background-color: #fafafa; line-height: 1.6; }
     a { text-decoration: none; color: inherit; }
     
-    /* 顶部导航栏 */
+    /* 顶部导航栏 (PC端默认样式) */
     header { background-color: #571801; color: #fff; padding: 20px 50px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100;}
     header h1 { margin: 0; font-size: 24px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; }
     header h1 a { color: #fff; transition: opacity 0.3s; }
     header h1 a:hover { opacity: 0.8; }
+    nav { display: flex; align-items: center; }
     nav a { color: #ccc; text-decoration: none; margin-left: 20px; font-size: 13px; text-transform: uppercase; transition: color 0.3s;}
     nav a:hover { color: #fff; }
     .lang-switch { background: transparent; border: 1px solid #ccc; color: #ccc; padding: 5px 12px; margin-left: 20px; cursor: pointer; transition: all 0.3s;}
     .lang-switch:hover { border-color: #fff; color: #fff; }
+    
+    /* 手机端头部导航自适应优化 */
+    @media (max-width: 768px) {
+        header { 
+            flex-direction: column; /* 改为上下排列 */
+            padding: 15px 20px; /* 减小两侧内边距 */
+            gap: 15px; /* 标题和导航之间的间距 */
+        }
+        header h1 {
+            font-size: 20px; /* 稍微缩小标题字体 */
+            text-align: center;
+        }
+        nav {
+            flex-wrap: wrap; /* 允许导航项换行 */
+            justify-content: center; /* 导航项居中 */
+            gap: 12px; /* 导航项之间的间距 */
+        }
+        nav a { 
+            margin-left: 0; /* 取消左侧固定间距 */
+            font-size: 12px; /* 稍微缩小导航字体 */
+        }
+    }
     
     /* 首屏区域 - 加入背景图与半透明黑色遮罩 */
     .hero { 
@@ -34,6 +57,13 @@
     
     /* 通用板块 */
     .section { padding: 80px 50px; max-width: 1100px; margin: 0 auto; }
+    
+    /* 手机端通用板块边距优化 */
+    @media (max-width: 768px) {
+        .section { padding: 40px 20px; }
+        .hero h2 { font-size: 32px; }
+    }
+
     .section h3 { font-size: 24px; font-weight: 300; text-transform: uppercase; margin-bottom: 40px; letter-spacing: 1px; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
     
     /* 主页卡片网格 - 调整为整块可点击 */
@@ -104,7 +134,7 @@
             <a href="index.html" >Home 首页</a>
             <a href="about.html" >Biography 简介</a>
             <a href="media.html" >Media 媒体</a>
-            <a href="projects.html" >Projects 项目</a>
+            <a href="projects.html" >Projects 企划</a>
             <a href="schedule.html" style="color: #fff; border-bottom: 1px solid #fff; padding-bottom: 2px;">Schedule 日程</a>
             <a href="contact.html" >Contact 联系</a>
 
