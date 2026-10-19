@@ -82,6 +82,8 @@ common_style = """
     
     footer { background: #571801; color: #ddd; text-align: center; padding: 30px; font-size: 12px; margin-top: 50px; }
 </style>
+<meta name="description" content="申晋宇 (Shen Jinyu) 个人官方网站。旅德青年指挥家，CANTO室内合唱团艺术总监，AIR现代乐集首席指挥。">
+<meta name="keywords" content="申晋宇, Shen Jinyu, 指挥家, Conductor, CANTO合唱团, AIR现代乐集, 古典音乐, 青年指挥">
 """
 
 # --------------------------
@@ -175,6 +177,8 @@ about_html = f"""<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="申晋宇 (Shen Jinyu) 个人官方网站。旅德青年指挥家，CANTO室内合唱团艺术总监，AIR现代乐集首席指挥。">
+    <meta name="keywords" content="申晋宇, Shen Jinyu, 指挥家, Conductor, CANTO合唱团, AIR现代乐集, 古典音乐, 青年指挥">
     <title>Biography 简介 | 申晋宇 Shen Jinyu</title>
     {common_style}
     <style>
@@ -261,6 +265,7 @@ about_html = f"""<!DOCTYPE html>
                     <li>罗伯特舒曼交响乐团 (Sinfonieorchester der RSH)</li>
                     <li>当代乐团 (Musikfabrik Ensemble)</li>
                     <li>下萨克森青年爱乐乐团 (Jungend Philharmonisches Orchester Niedersachsen)</li>
+                    <li>嘉兴大潮爱乐乐团</li>
                     <li>中国青年交响乐团</li>
                     <li>RSH Vokalensemble</li>
                     <li>Candomino 合唱团</li>
@@ -297,6 +302,10 @@ media_html = f"""<!DOCTYPE html>
         .photo-item img {{ width: 100%; height: auto; display: block; transition: transform 0.3s ease; }}
         .photo-item:hover img {{ transform: scale(1.03); }}
     </style>
+    <meta name="baidu-site-verification" content="codeva-pkMSnvIMrr" />
+    <title>申晋宇的个人主页</title>
+<meta name="keywords" content="申晋宇, 申晋宇的个人网页, 个人简历, 申晋宇的作品">
+<meta name="description" content="欢迎来到申晋宇的个人网站，这里展示了我的个人履历、项目作品和联系方式。">
 </head>
 <body>
     {build_header("media")}
@@ -307,34 +316,33 @@ media_html = f"""<!DOCTYPE html>
         <!-- 视频部分 -->
         <h4 class="media-section-title">Videos 视频</h4>
         <div class="video-grid">
-            <!-- 视频 1  -->
+            
+            <!-- 视频 3 -->
             <div>
-                <div class="video-item">
-                    <video controls poster="photos/申晋宇 Der fliegende Holländer.png">
-                        <source src="videos/申晋宇 Der fliegende Holländer.mp4" type="video/mp4">
-                    </video>
+                <div class="video-item" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                    <iframe src="https://player.youku.com/embed/XNjUwMzMzMDQwMA==" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
                 </div>
-                <p class="video-caption">Der fliegende Holländer - R.Wagner</p>
+                <p class="video-caption">Blessed are the dead - H.Howells</p>
             </div>
-
+        
             <!-- 视频 2 -->
             <div>
-                <div class="video-item">
-                    <video controls poster="photos/申晋宇 Boulez Memoriale.png">
-                        <source src="videos/申晋宇 Boulez Memoriale.mp4" type="video/mp4">
-                    </video>
+                <div class="video-item" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                    <iframe src="https://player.youku.com/embed/XNjU2Nzk1MjQwNA==" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
                 </div>
                 <p class="video-caption">Memoriale - P.Boulez</p>
             </div>
 
-            <!-- 视频 3 -->
-            <div>
-                <div class="video-item">
-                    <video controls poster="photos/Blessed are the dead.png">
-                        <source src="videos/Blessed are the dead.mp4" type="video/mp4">
+            <!-- 视频 1  -->
+           <div>
+                <div class="video-item" style="box-shadow: 0 4px 15px rgba(0,0,0,0.1); background: #000;">
+                    <!-- 在 style 中新增了 object-fit: contain; -->
+                    <video controls poster="photos/申晋宇 Der fliegende Holländer.png" style="width: 100%; display: block; object-fit: contain;">
+                        <source src="videos/申晋宇 Der fliegende Holländer.mp4" type="video/mp4">
+                        您的浏览器不支持本地视频播放。
                     </video>
-                 </div>
-                <p class="video-caption">Blessed are the dead - H.Howells</p>
+                </div>
+                <p class="video-caption">Der fliegende Holländer - R.Wagner</p>
             </div>
         </div>
 
@@ -392,7 +400,7 @@ projects_html = f"""<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects 项目 | 申晋宇 Jinyu Shen</title>
+    <title>Projects 企划 | 申晋宇 Jinyu Shen</title>
     {common_style}
     <style>
         /* 新增的 Headline 样式 (参照简介页) */
@@ -432,7 +440,7 @@ projects_html = f"""<!DOCTYPE html>
                 <img src="photos/canto.jpg" alt="CANTO Vocal Ensemble Logo">
             </div>
             <div class="project-info">
-                <h4>CANTO Vocal Ensemble | CANTO青年室内合唱团</h4>
+                <h4>CANTO Vocal Ensemble | <span style="white-space: nowrap;">CANTO青年室内合唱团</span></h4>
                 <p>申晋宇创办的CANTO青年室内合唱团是立足北京的新锐室内合唱团体,专注演绎多风格合唱作品。合唱团秉持回归人声本质的艺术理念,兼顾古典作品的庄重质感与当代作品的多元风格。以专业化、年轻化为发展方向，致力于打造高质量的室内合唱艺术平台。未来，团队将持续推出专场音乐会、专题展演及原创作品展示等艺术活动，深耕室内合唱艺术。</p>
                 <p>The CANTO Vocal Ensemble is a chamber choir founded by Shen Jinyu, based in Beijing, specialising in the performance of choral works across a variety of styles. Upholding an artistic philosophy centred on  the essence of the individual artistic voice. In the future, the ensemble will continue to organise chroal concerts, commissioned works concerts , deepening its engagement with the field of chamber choir whilst continuing to promote the diversity of choral art.</p>
                 <a href="https://xhslink.cn/o/ATZX9F3uFBm" target="_blank" class="project-link">访问主页 / Visit Homepage →</a>
@@ -445,7 +453,7 @@ projects_html = f"""<!DOCTYPE html>
                 <img src="photos/大耳青年.jpg" alt="大耳青年 Podcast Logo">
             </div>
             <div class="project-info">
-                <h4>Podcast | 大耳青年</h4>
+                <h4>Podcast | <span style="white-space: nowrap;">大耳青年</span></h4>
                 <p>申晋宇创办的《大耳青年》是一档访谈与分享的播客，与不同专业背景的朋友们谈论音乐和艺术。我们邀请各行各业的朋友们坐下对谈，围绕音乐、艺术与生活展开交流。在对话中，倾听不同职业背景的人分享与音乐艺术相伴的真实体验、思考与选择。</p>
                 <p>This is a podcast programm featuring interviews and discussions, where we talk about music and the arts with friends from diverse professional backgrounds.</p>
                 <a href="https://www.xiaoyuzhoufm.com/podcast/634ea974fc1737df59631e0a" target="_blank" class="project-link">收听播客 / Listen to Podcast →</a>
@@ -655,7 +663,7 @@ contact_html = f"""<!DOCTYPE html>
             </div>
             
             <div class="contact-item" style="margin-bottom: 35px; font-size: 20px;">
-                <span class="title" style="display: block; font-size: 18px; color: #571801; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;">Phone / 联系电话</span>
+                <span class="title" style="display: block; font-size: 18px; color: #571801; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;">Phone number / 联系电话</span>
                 <p style="margin: 10px 0;"><a href="tel:+8618600239010" style="color: #333; text-decoration: none;">+86 186 0023 9010</a></p>
             </div>
 
